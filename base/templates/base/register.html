@@ -1,0 +1,28 @@
+
+{% extends 'base/master.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+
+
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h2>Register</h2>
+    </div>
+    <div class="card-body">
+        <form action="" method="POST">
+        {% csrf_token %}
+            {{form|crispy}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="card-footer text-muted">
+        <p>I have an account <a href="{% url 'login-user' %}">Login</a></p>
+    </div>
+</div>
+
+
+{% endblock %}

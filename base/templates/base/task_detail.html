@@ -1,0 +1,36 @@
+{% extends 'base/master.html' %}
+
+{% block content %}
+
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h2>Task Detail of {{request.user}}</h2>
+        <a href="{% url 'tasks' %}" class="btn btn-success">Go Back</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">#Id</th>
+                <td>{{task.id}}</td>
+            </tr>
+            <tr>
+                <th scope="col">Title</th>
+                <td>{{task.title}}</td>
+            </tr>
+            <tr>
+                <th scope="col">Description</th>
+                <td>{{task.description}}</td>
+            </tr>
+            <tr>
+                <th scope="col">Role</th>
+                <td>{{task.complete}}</td>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

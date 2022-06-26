@@ -1,0 +1,19 @@
+{% extends 'base/master.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h2>Delete Task</h2>
+        <a href="{% url 'tasks' %}" class="btn btn-success">Go Back</a>
+    </div>
+    <div class="card-body">
+        <form action="" method="POST">
+        {% csrf_token %}
+            <p>are you sure yor want to delete this task? "{{task}}"</p>
+            <button type="submit" class="btn btn-primary">Confirm</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

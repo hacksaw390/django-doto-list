@@ -1,5 +1,9 @@
 {% extends 'base/master.html' %}
 
+{% block title %}
+Home
+{% endblock %}
+
 {% block content %}
 
 <div class="card">
@@ -41,7 +45,13 @@
             {% for item in tasks %}
             <tr>
                 <th scope="row">{{item.id}}</th>
-                <td>{{item.title|slice:":20"}}</td>
+                <td>
+                    {% if item.complete %}
+                        {{item.title|slice:":20"}}
+                    {% else %}
+                    <s>{{item.title|slice:":20"}}</s>
+                    {% endif %}
+                </td>
                 <td>{{item.description|slice:":20"}}</td>
                 <td>{{item.complete}}</td>
                 <td>
